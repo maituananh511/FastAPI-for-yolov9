@@ -60,7 +60,7 @@ async def predict(file: UploadFile = File(...)):
         results = client.infer(model_name=MODEL_NAME, inputs=[inputs], outputs=[outputs])
         inference_output = results.as_numpy("output")
 
-        print("RAW OUTPUT:", inference_output)  # 🔍 Debugging step
+        print("RAW OUTPUT:", inference_output)  # Debugging step
 
         return {"debug_output": inference_output.tolist()}  # Temporary return to check output format
 
